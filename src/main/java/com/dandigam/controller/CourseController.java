@@ -32,5 +32,10 @@ public class CourseController {
 	public String deleteCourse(Long id) {
 		return courseService.deleteCouse(id);
 	}
+	
+	@GetMapping("/{id}")
+	public List<Course> getCourse(Long id) {
+		return courseService.getCourse(id);
+	}
 
 }

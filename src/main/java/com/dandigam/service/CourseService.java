@@ -3,6 +3,7 @@ package com.dandigam.service;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
@@ -32,6 +33,10 @@ public class CourseService {
 			itr.remove();
 		}
 		return "Deleted";
+	}
+
+	public List<Course> getCourse(Long id) {
+		return courses.stream().filter(course -> course.getId().equals(id)).collect(Collectors.toList());
 	}
 
 }
